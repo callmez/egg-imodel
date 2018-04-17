@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The missing Model interface for egg",
   "eggPlugin": {
-    "name": "imodel"
+    "name": "model"
   },
   "scripts": {},
   "repository": {

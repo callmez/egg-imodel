@@ -4,7 +4,7 @@ const egg = require('egg');
 const path = require('path');
 
 const hasModel = !!egg.Model;
-if (!hasModel) egg.Model = require('egg/lib/core/base_context_class');
+if (!hasModel) egg.Model = require('./lib/BaseModelClass');
 
 module.exports = app => {
   if (hasModel) {
@@ -17,7 +17,11 @@ module.exports = app => {
     caseStyle: 'lower',
     call: true,
     directory: path.join(app.config.baseDir, 'app/model'),
+    initializer(model, opt) {
+      return new model(app);
+    },
   };
   const modelBase = modelOptions.directory;
-  app.loader.loadToApp(modelBase, 'model');
+  app.loader.loadToApp(modelBase, 'model', modelOptions);
+  app.logger.info('[egg:loader] Model loaded: %s', modelBase);
 };
