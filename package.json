@@ -1,6 +1,6 @@
 {
   "name": "egg-imodel",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "The missing Model interface for egg",
   "eggPlugin": {
     "name": "model"

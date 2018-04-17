@@ -5,7 +5,7 @@
 ```javascript
 
 // [Project]/config/plugin.js
-exports.imodel = {
+exports.model = {
   enable: true,
   package: 'egg-imodel',
 };
